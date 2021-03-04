@@ -11,7 +11,7 @@ COPY yarn.lock /usr/src/app/
 RUN chown myuser /usr/src/app/yarn.lock
 
 USER myuser
-RUN yarn install
+RUN yarn config set strict-ssl false && yarn install
 
 COPY . /usr/src/app
 
